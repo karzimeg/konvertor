@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="icon" href="favicon1.png">
+    
+
+    <title>Vodenica </title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>
+        Vodeničarski <br />
+        sistem <br>
+        elemenata
+      </h2>
+      <br />
+
+      <nav class="tabs">
+        <div class="selector"></div>
+        <a href="#" class="active">Kalkulator</a>
+
+        <a href="#footer1">KAKO?</a>
+      </nav>
+    </div>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="widget">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="input" type="text" autocomplete="off">
+                </div>
+                <div class="input-field col s12">
+                  <select id="from">
+                    <option value="0">Vodenice</option>
+                    <option value="1">Kamenovi</option>
+                    <option value="2">Litre</option>
+                    <option value="3">Dani</option>
+                    <option value="4">Drami</option>
+                  </select>
+                </div>
+                <div class="input-field col s12">
+                  <select id="to">
+                    <option value="0">Vodenice</option>
+                    <option value="1">Kamenovi</option>
+                    <option value="2">Litre</option>
+                    <option value="3">Dani</option>
+                    <option value="4">Drami</option>
+                  </select>
+                </div>
+                <div class="input-field col s6">
+                   
+                  <button onclick=convert() style="--content: 'Pretvori';">
+                    <div class="left"></div>
+                      Pretvori
+                    <div class="right"></div>
+                  </button>
+                  <br>
+                
+                </div>
+                <div class="input-field ">
+                  <br>
+                  <span id="result"></span><span id="result-unit"> </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script>
+      function convert(){
+  
+        var value = document.getElementById('input').value;
+        var from = document.getElementById('from').value;
+        var to = document.getElementById('to').value;
+        var res = ''
+  
+        coef = [7,4,7,14.29];
+        if (from == to)
+            res = value;
+        else if (from < to) {
+            res = value;
+  
+            for(i=from;i<to;i++){
+                res *= coef[i];}
+            }
+        else {
+            res = value;
+  
+            for(var i=from-1;i>=to;i--){
+                res = res/coef[i];}
+            }
+        document.getElementById('result').innerHTML = Math.round(res * 100) / 100 + " ";
+        document.getElementById('result-unit').innerHTML = "(" + getResultUnit() + ")";
+      };
+  
+      function getResultUnit(){
+        var select = document.getElementById('to');
+        var selectedOption = select.options[select.selectedIndex].text;
+        return selectedOption;
+      }
+  
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+      });
+    </script>
+    </section>
+    
+    <footer id="footer1">
+    <div class="card">
+      <img src="1.JPG" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>Toma</b></h4>
+        <p>1 vodenica = 7 kamenova <br>
+          1 kamen = 4 litre <br>
+          7 kamenova = 28 litara <br>
+          1 litra = 7 dana <br>
+          7 kamenova = 196 dana</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="2.JPG" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>Leja</b></h4>
+        <p>1 drama = 24 sata <br>
+ 
+1 kamen = 9600 sati<br>9600 sati = 400 dana <br>
+7 kamenova = 2800 dana
+ <br>
+ 100 drama = 7 dana
+</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="3.JPG" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>Živojin</b></h4>
+        <p>100 drama = 7 dana <br>
+          1 kamen = 400 drama <br>
+          400 drama  = 4 litre <br>
+          1 litra = dva sata <br>
+          2 kamena = 7 gazdi
+          </p>
+      </div>
+    </div>
+    
+   
+  </footer>
+  <div class="kakobre">
+  <h1 class="kako"><strong>  KAKO NE MOŽEŠ DA RAZUMEŠ?</strong></h1>
+</div>
+<div class="ja">
+  <p class="ppp"> © Milan Adamović </p>
+</div>
+    <script src="script.js"></script>
+    
+  </body>
+</html>

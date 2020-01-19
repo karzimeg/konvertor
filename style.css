@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Varela Round", sans-serif;
+  background: url(./66550836-435e-4c52-afcd-4cd13c5ab6bb.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 500px;
+  height: 300px;
+}
+h1 {
+  font-size: 80px;
+}
+h2 {
+  margin: 0px;
+  text-transform: uppercase;
+}
+h4 {
+  text-align: center;
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+h6 {
+  margin: 0px;
+  color: #777;
+}
+
+.wrapper {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.tabs {
+  margin-top: 50px;
+  font-size: 15px;
+  padding: 0px;
+  list-style: none;
+  background: #fff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  border-radius: 50px;
+  position: relative;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #777;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.6s;
+}
+
+.tabs a.active {
+  color: #fff;
+}
+
+.tabs a i {
+  margin-right: 5px;
+}
+
+.tabs .selector {
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  border-radius: 50px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  background: #05abe0;
+  background: -moz-linear-gradient(45deg, #05abe0 0%, #002df4 100%);
+  background: -webkit-linear-gradient(45deg, #05abe0 0%, #002df4 100%);
+  background: linear-gradient(45deg, #05abe0 0%, #002df4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+}
+input,
+input::placeholder {
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0);
+  margin: 5px;
+  border-radius: 40px;
+  border: none;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  height: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  outline: none;
+}
+form {
+  margin: 10 0 0 0;
+}
+#result {
+  margin-top: 5px;
+  font-size: 23px;
+  text-align: center;
+  color: hsl(210, 80%, 42%);
+  font-weight: 700;
+}
+
+#result-unit {
+  margin-top: 5px;
+  color: hsl(210, 80%, 42%);
+}
+
+.widget {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  border-radius: 5px;
+}
+.input-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.widget {
+  margin: 50px;
+}
+#to,
+#from {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Varela Round", sans-serif;
+}
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, 0.4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+button {
+  margin-top: 10px;
+  position: relative;
+  padding: 10px 20px;
+  background: none;
+  cursor: pointer;
+  box-shadow: 0 0 8px 0 dodgerblue;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--text-color);
+  border: none;
+  background-color: var(--btn-color);
+  font-family: "Varela Round", sans-serif;
+
+  border-radius: 50px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+button:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after,
+button::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events: none;
+}
+
+button::after {
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+}
+
+.right,
+.left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+
+  background-color: var(--bg-color);
+  color: transparent;
+  transition: transform 0.4s ease-out;
+  transform: translate(0, -90%) rotate(0deg);
+}
+
+button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg);
+}
+
+button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg);
+}
+
+button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg);
+}
+
+/* bubbles */
+button::before {
+  content: "";
+  pointer-events: none;
+  opacity: 0.6;
+  background: radial-gradient(
+      circle at 20% 35%,
+      transparent 0,
+      transparent 2px,
+      var(--text-color) 3px,
+      var(--text-color) 4px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 75% 44%,
+      transparent 0,
+      transparent 2px,
+      var(--text-color) 3px,
+      var(--text-color) 4px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 46% 52%,
+      transparent 0,
+      transparent 4px,
+      var(--text-color) 5px,
+      var(--text-color) 6px,
+      transparent 6px
+    );
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  height: 250px;
+  width: 250px;
+  margin: 15px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 50px 100px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+.kakobre {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+.kako {
+  color: rgba(0, 0, 0, 0.5);
+}
+.ja {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.ppp {
+  color: rgb(165, 165, 165);
+  text-shadow: ghostwhite;
+}
+@media screen and (max-width: 1024px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin-bottom: 150px;
+  }
+  .kakobre {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .kako {
+    text-align: center;
+    font-size: 40px;
+  }
+}
