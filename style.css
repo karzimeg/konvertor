@@ -87,8 +87,9 @@ input::placeholder {
   margin: 5px;
   border-radius: 40px;
   border: none;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-  height: 20px;
+
+  height: 40px;
+  width: 300px;
   text-align: center;
   margin-bottom: 20px;
   outline: none;
@@ -163,22 +164,6 @@ button {
 button:focus {
   outline-color: transparent;
   box-shadow: var(--btn-color) 2px 2px 22px;
-}
-
-.right::after,
-button::after {
-  content: var(--content);
-  display: block;
-  position: absolute;
-  white-space: nowrap;
-  padding: 40px 40px;
-  pointer-events: none;
-}
-
-button::after {
-  font-weight: 200;
-  top: -30px;
-  left: -20px;
 }
 
 .right,
